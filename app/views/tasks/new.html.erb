@@ -1,0 +1,17 @@
+<%= form_for [@task_list, @task] do |f| %>
+  <% if @task.errors.any? %>
+    <% @task.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+    <% end %>
+
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.label :due_date %>
+    <%= f.date_select :due_date %>
+
+    <%= f.submit %>
+
+  <% end %>
